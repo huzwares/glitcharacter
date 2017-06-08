@@ -21,3 +21,5 @@ a: Lower case
 A: Upper case
 
 !: Special characters
+
+npm i glitcharacter.js
