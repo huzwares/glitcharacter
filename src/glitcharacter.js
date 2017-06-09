@@ -1,14 +1,17 @@
-function glitch(id, index, type) {
+function glitch(id, index, type, glitchWeight, randomStart, randomStop) {
     this.id = id;
     this.index = index;
     this.word = document.getElementById(id).innerHTML;
     this.type = type;
+    this.glitchWeight = glitchWeight;
+    this.randomStart = randomStart;
+    this.randomStop = randomStop;
     this.start = function() {
-        gliCharacter(this, this.id, this.word, this.index, this.type);
+        gliCharacter(this, this.id, this.word, this.index, this.type, this.glitchWeight, this.randomStart, this.randomStop);
     };
 }
 
-function gliCharacter(glitch, where, input, index, type) {
+function gliCharacter(glitch, where, input, index, type, weight, start, stop) {
     var mask = '';
     if (type.indexOf('a') > -1) mask += 'abcdefghijklmnopqrstuvwxyz';
     if (type.indexOf('A') > -1) mask += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -21,10 +24,10 @@ function gliCharacter(glitch, where, input, index, type) {
 
     output = input.substring(0, index - 1) + result + input.substring(index);
     document.getElementById(where).innerHTML = output;
-    if (Math.floor(Math.random() * 10) < 5) {
-        setTimeout(function() { glitch.start(); }, Math.floor(Math.random() * 1000) + 100);
+    if (Math.floor(Math.random() * 10) < weight) {
+        setTimeout(function() { glitch.start(); }, Math.floor(Math.random() * stop) + start);
     } else {
-        setTimeout(function() { document.getElementById(where).innerHTML = input; }, Math.floor(Math.random() * 1000) + 100);
+        setTimeout(function() { document.getElementById(where).innerHTML = input; }, Math.floor(Math.random() * stop) + start);
         glitch.start();
     }
 }

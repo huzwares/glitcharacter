@@ -26,9 +26,10 @@
     <link rel="preconnect" href="https://sinaomrani.github.io/glitcharacter/">
     <link rel="prefetch" href="https://sinaomrani.github.io/glitcharacter/">
     <link rel="prerender" href="https://sinaomrani.github.io/glitcharacter/">
+    <link rel="preload" href="img/logo.png" as="image">
     <meta property="og:url" content="https://sinaomrani.github.io/glitcharacter/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="glitcharacter">
+    <meta property="og:title" content="Vira Code">
     <meta property="og:image" content="https://sinaomrani.github.io/glitcharacter/img/logo.png">
     <meta property="og:description" content="kinda glitch effect">
     <meta property="og:site_name" content="glitcharacter">
@@ -83,7 +84,7 @@
 <body>
     <header class="u-full-width">
         <h1 id="glitch">glitcharacter.js</h1>
-        <h5>kinda glitch effect.V0.1</h5>
+        <h5>kinda glitch effect.V0.3.0</h5>
     </header>
     <section class="container">
         <div class="row">
@@ -97,19 +98,11 @@
             <h2><a href="https://zarinp.al/@sinaomrani" target="_blank">help me buy new laptop</a></h2>
         </div>
     </section>
-    <script src="src/glitcharacter.min.js"></script>
+    <script src="src/glitcharacter.js"></script>
     <script>
-    var gl = new glitch("glitch", "random", "a");
-    gl.start();
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-73146758-17', 'auto');
-  ga('send', 'pageview');
-
-</script>
+        var gl = new glitch("glitch", "random", "a", 7, 100, 750);
+        gl.start();
+    </script>
 </body>
 
 </html>
